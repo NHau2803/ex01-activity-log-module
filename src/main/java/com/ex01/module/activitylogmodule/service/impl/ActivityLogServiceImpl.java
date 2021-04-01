@@ -6,6 +6,9 @@ import com.ex01.module.activitylogmodule.service.ActivityLogService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,6 +18,12 @@ public class ActivityLogServiceImpl implements ActivityLogService {
     private ActivityLogRepository activityLogRepository;
 
     private Logger logger = LoggerFactory.getLogger(ActivityLogServiceImpl.class);
+
+    @Override
+    public Page<ActivityLogModel> search(int pageStart, int pageSize) {
+        Pageable pageable = PageRequest.of(pageStart - 1, pageSize);
+        return activityLogRepository.findAll(pageable);
+    }
 
     @Override
     public ActivityLogModel add(ActivityLogModel request) {

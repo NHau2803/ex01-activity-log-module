@@ -1,30 +1,18 @@
-package com.ex01.module.activitylogmodule.model;
+package com.ex01.module.activitylogmodule.dto;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "activity_log")
-public class ActivityLogModel {
+public class ActivityLogCreateDTO {
 
-    @Id
-    private String id;
-    private long actionAt;
+    private String actionAt;
     private String actionBy;
     private String operator;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public long getActionAt() {
+    public String getActionAt() {
         return actionAt;
     }
 
-    public void setActionAt(long actionAt) {
+    public void setActionAt(String actionAt) {
         this.actionAt = actionAt;
     }
 

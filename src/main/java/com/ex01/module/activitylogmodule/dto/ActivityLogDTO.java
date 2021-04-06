@@ -1,14 +1,12 @@
-package com.ex01.module.activitylogmodule.model;
+package com.ex01.module.activitylogmodule.dto;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "activity_log")
-public class ActivityLogModel {
+public class ActivityLogDTO {
 
     @Id
     private String id;
-    private long actionAt;
+    private String actionAt;
     private String actionBy;
     private String operator;
 
@@ -20,11 +18,11 @@ public class ActivityLogModel {
         this.id = id;
     }
 
-    public long getActionAt() {
+    public String getActionAt() {
         return actionAt;
     }
 
-    public void setActionAt(long actionAt) {
+    public void setActionAt(String actionAt) {
         this.actionAt = actionAt;
     }
 

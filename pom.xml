@@ -11,7 +11,7 @@
     <groupId>com.ex01.module</groupId>
     <artifactId>activity-log-module</artifactId>
     <version>0.0.1</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>Student Activity Log Module</name>
     <properties>
         <spring-data-mongodb-version>2.0.10.RELEASE</spring-data-mongodb-version>
